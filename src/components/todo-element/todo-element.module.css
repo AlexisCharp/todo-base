@@ -1,0 +1,45 @@
+.todo-element {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--color-card-background);
+  border-radius: 8px;
+}
+
+.todo-element__form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+
+  color: currentColor;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #fff;
+  border-radius: 0.125rem;
+
+  display: grid;
+  place-content: center;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 0.6rem;
+  height: 0.6rem;
+  opacity: 0;
+  transition: 0.2s opacity ease;
+  box-shadow: inset 1em 1em var(--color-dark);
+  border-radius: 0.075rem;
+}
+
+input[type='checkbox']:checked::before {
+  opacity: 1;
+}
