@@ -1,12 +1,10 @@
-import Image from 'next/image';
-import deleteIcon from '../../../public/delete.svg';
 import { TodoAction } from '@/components/todo-action/todo-action';
 import { TodoElement } from '@/components/todo-element/todo-element';
-import { Button } from '@/components/button/button';
+import classes from './todo-list.module.css';
 
 export const TodoList = () => {
   return (
-    <div>
+    <div className={classes['todo-list']}>
       <h2>Todo List</h2>
       <TodoAction />
       <TodoElement />
