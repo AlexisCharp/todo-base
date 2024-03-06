@@ -14,7 +14,7 @@
   font-size: 1rem;
 }
 
-input[type='checkbox'] {
+.todo-element__input {
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
@@ -30,7 +30,7 @@ input[type='checkbox'] {
   place-content: center;
 }
 
-input[type='checkbox']::before {
+.todo-element__input::before {
   content: '';
   width: 0.6rem;
   height: 0.6rem;
@@ -40,6 +40,6 @@ input[type='checkbox']::before {
   border-radius: 0.075rem;
 }
 
-input[type='checkbox']:checked::before {
+.todo-element__input:checked::before {
   opacity: 1;
 }
