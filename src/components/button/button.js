@@ -1,13 +1,12 @@
 import './button.css';
 
-export const Button = ({ children, noPadding, type, variant }) => {
+export const Button = ({ children, noPadding, type, variant, onClick }) => {
   const className = `${variant === 'danger' ? 'button--danger' : ''} ${
     noPadding ? 'button--no-padding' : ''
   }`;
-  console.log(variant);
 
   return (
-    <button className={className} type={type}>
+    <button className={className} type={type} onClick={onClick}>
       {children}
     </button>
   );

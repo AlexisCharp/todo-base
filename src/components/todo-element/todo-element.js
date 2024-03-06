@@ -3,17 +3,18 @@ import { Button } from '@/components/button/button';
 import classes from './todo-element.module.css';
 import deleteIcon from '../../../public/delete.svg';
 
-export const TodoElement = () => {
+export const TodoElement = ({ id, name, deleteTask }) => {
   return (
     <div className={classes['todo-element']}>
-      <label className={classes['todo-element__form']}>
+      <label className={classes['todo-element__form']} htmlFor={id}>
         <input
+          id={id}
           type="checkbox"
           className={classes['todo-element__input']}
-        ></input>
-        Label
+        />
+        {name}
       </label>
-      <Button>
+      <Button onClick={() => deleteTask(id)}>
         <Image src={deleteIcon} alt="Delete the element" />
       </Button>
     </div>
