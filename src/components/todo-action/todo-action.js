@@ -1,15 +1,14 @@
-'use client';
-
 import { useRef } from 'react';
 import { Button } from '@/components/button/button';
 import classes from './todo-action.module.css';
 
-export const TodoAction = () => {
+export const TodoAction = ({ addTodo }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (!inputRef.current.value.trim()) return;
     const value = inputRef.current.value.trim();
-    console.log(value);
+    addTodo(value);
+    inputRef.current.value = '';
   };
 
   const inputRef = useRef(null);
