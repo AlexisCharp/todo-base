@@ -1,13 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TodoAction } from '@/components/todo-action/todo-action';
 import { TodoElement } from '@/components/todo-element/todo-element';
 import classes from './todo-list.module.css';
-import { saveToLocalStorage } from '@/utils/local-storage-manager';
+import {
+  saveToLocalStorage,
+  loadFromLocalStorage,
+} from '@/utils/local-storage-manager';
 
 export const TodoList = () => {
   const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    const data = loadFromLocalStorage('todo-list');
+    setTodos(data);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      saveToLocalStorage('todo-list', todos);
+    });
+  }, [todos]);
 
   const addTodo = (todoName) => {
     setTodos((oldTodos) => [
